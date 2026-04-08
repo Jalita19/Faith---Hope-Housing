@@ -47,10 +47,10 @@ p{
 /* ================= NAVBAR (ELITE LUXURY) ================= */
 
 
-header{
-  position:sticky;
-  top:0; /* ✅ stick to top */
+/* ================= HEADER ================= */
 
+header{
+  position:relative; /* no floating */
   width:100%;
   z-index:1000;
 
@@ -58,38 +58,12 @@ header{
   justify-content:space-between;
   align-items:center;
 
-  padding:18px 8%;
+  padding:16px 6%;
 
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
+  background:rgba(0,0,0,0.9);
+  backdrop-filter:blur(15px);
 
   border-bottom:1px solid rgba(216,156,130,.2);
-
-  box-shadow:0 15px 40px rgba(0,0,0,.8);
-
-  transition:.4s ease;
-}
-
-/* ✨ SCROLL EFFECT */
-
-header.scrolled{
-  background:rgba(0,0,0,0.92);
-  box-shadow:0 30px 80px rgba(0,0,0,.95);
-}
-
-/* ✨ BOTTOM GLOW LINE */
-
-header::after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:2px;
-
-  background:linear-gradient(90deg, transparent, var(--rose), transparent);
-  opacity:.6;
 }
 
 /* ================= LOGO ================= */
@@ -97,34 +71,35 @@ header::after{
 .logo-container{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:10px;
+
+  max-width:420px;
+  flex:1;
 }
+
+/* IMAGE */
 
 .logo{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-
-  box-shadow:0 0 20px rgba(216,156,130,.6);
-  transition:.4s ease;
+  width:45px;
+  height:45px;
+  object-fit:contain;
+  flex-shrink:0;
 }
 
-/* 🔥 LOGO HOVER */
-
-.logo:hover{
-  transform:scale(1.1) rotate(3deg);
-  box-shadow:0 0 35px rgba(216,156,130,1);
-}
-
-/* TEXT */
+/* TEXT (FIXED FOR LONG NAME) */
 
 .logo-text{
-  font-size:1.5rem;
-  font-weight:700;
-  color:var(--rose);
-  letter-spacing:1px;
+  font-family:'Poppins', sans-serif;
+  font-weight:600;
 
-  font-family:'Playfair Display', serif;
+  font-size:15px;
+  line-height:1.2;
+
+  color:#d89c82;
+
+  /* 🔥 KEY FIX */
+  white-space:normal;     /* allow wrap */
+  max-width:260px;
 }
 
 /* ================= NAV ================= */
@@ -132,179 +107,59 @@ header::after{
 nav{
   display:flex;
   align-items:center;
-  gap:40px; /* more breathing room */
+  gap:25px;
 }
+
+/* LINKS */
 
 nav ul{
   display:flex;
-  gap:28px;
+  gap:20px;
   list-style:none;
   align-items:center;
 }
 
-/* ================= LINKS ================= */
-
 nav ul li a{
   text-decoration:none;
   color:#ccc;
-
-  font-size:15px;
-  font-weight:500;
-
-  position:relative;
-  padding:6px 0;
-
-  transition:.3s ease;
+  font-size:14px;
+  transition:.3s;
 }
-
-/* 🔥 HOVER */
 
 nav ul li a:hover{
-  color:var(--rose);
-  text-shadow:0 0 10px rgba(216,156,130,.7);
+  color:#d89c82;
 }
 
-/* ✨ UNDERLINE */
-
-nav ul li a::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:-6px;
-
-  width:0%;
-  height:2px;
-
-  background:linear-gradient(90deg,var(--rose),#ffccb7);
-
-  transition:.4s ease;
-  transform:translateX(-50%);
-}
-
-nav ul li a:hover::after{
-  width:100%;
-}
-
-/* ACTIVE */
-
-nav ul li a.active{
-  color:var(--rose);
-}
-
-nav ul li a.active::after{
-  width:100%;
-}
-
-/* ================= MAIN CTA (ONLY ONE) ================= */
-
-/* ================= ROSE GOLD CTA (CLEAN) ================= */
+/* ================= CTA ================= */
 
 .nav-cta{
-  position:relative;
+  padding:12px 28px;
+  border-radius:40px;
 
-  padding:15px 42px;
-  border-radius:50px;
-
-  font-size:16px;
-  font-weight:700;
-  letter-spacing:.5px;
+  font-size:14px;
+  font-weight:600;
 
   background:linear-gradient(
     135deg,
-    #f3d1c4 0%,
-    #e6b7a5 25%,
-    #d89c82 50%,
-    #c7886d 75%,
-    #f3d1c4 100%
+    #f3d1c4,
+    #d89c82,
+    #c7886d
   );
 
   color:#3a2a25;
   text-decoration:none;
 
-  display:flex;
-  align-items:center;
-  gap:10px;
+  white-space:nowrap;
 
-  box-shadow:
-    0 15px 40px rgba(216,156,130,.6),
-    inset 0 2px 6px rgba(255,255,255,.4);
-
-  transition:.4s ease;
-  overflow:hidden;
-}
-
-/* ✨ SHINE EFFECT (ONLY ONCE) */
-
-.nav-cta::before{
-  content:"";
-  position:absolute;
-  width:300%;
-  height:100%;
-
-  background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,.7),
-    transparent
-  );
-
-  top:0;
-  left:-100%;
-  transition:.7s ease;
-}
-
-/* ✨ ARROW */
-
-.nav-cta::after{
-  content:"→";
-  font-size:16px;
+  box-shadow:0 10px 30px rgba(216,156,130,.5);
   transition:.3s;
 }
 
-/* 🔥 HOVER */
-
 .nav-cta:hover{
-  transform:translateY(-5px) scale(1.06);
-  box-shadow:
-    0 25px 70px rgba(216,156,130,.9),
-    inset 0 2px 8px rgba(255,255,255,.5);
+  transform:translateY(-3px);
 }
 
-.nav-cta:hover::before{
-  left:100%;
-}
-
-.nav-cta:hover::after{
-  transform:translateX(6px);
-}
-
-/* ✨ SUBTLE PULSE */
-
-.nav-cta{
-  animation:softPulse 3s infinite;
-}
-
-@keyframes softPulse{
-  0%{ box-shadow:0 0 0 rgba(216,156,130,0); }
-  50%{ box-shadow:0 0 20px rgba(216,156,130,.4); }
-  100%{ box-shadow:0 0 0 rgba(216,156,130,0); }
-}
-
-/* ================= NAV ================= */
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:40px;
-}
-
-nav ul{
-  display:flex;
-  gap:28px;
-  list-style:none;
-}
-
-/* ================= MOBILE MENU BUTTON ================= */
+/* ================= MOBILE ================= */
 
 .menu-toggle{
   display:none;
@@ -315,29 +170,22 @@ nav ul{
   cursor:pointer;
 }
 
-/* ================= MOBILE ================= */
-
 @media(max-width:900px){
+
+  header{
+    flex-wrap:wrap;
+  }
 
   .menu-toggle{
     display:block;
   }
 
   nav{
-    position:absolute;
-    top:80px;
-    left:0;
     width:100%;
-
-    background:rgba(0,0,0,.95);
-    backdrop-filter:blur(15px);
-
-    flex-direction:column;
-    padding:30px 0;
-
     display:none;
-
-    animation:fadeDown .4s ease;
+    flex-direction:column;
+    background:#000;
+    padding:20px 0;
   }
 
   nav.active{
@@ -346,31 +194,21 @@ nav ul{
 
   nav ul{
     flex-direction:column;
-    gap:22px;
+    gap:15px;
     text-align:center;
   }
 
   .nav-cta{
-    width:85%;
-    justify-content:center;
-    margin-top:10px;
+    width:80%;
+    text-align:center;
+  }
+
+  /* 🔥 LOGO MOBILE FIX */
+  .logo-text{
+    font-size:13px;
+    max-width:200px;
   }
 }
-
-/* ================= ANIMATION ================= */
-
-@keyframes fadeDown{
-  from{
-    opacity:0;
-    transform:translateY(-20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-
 
 /* ================= HERO (HIGH-IMPACT LUXURY) ================= */
 
