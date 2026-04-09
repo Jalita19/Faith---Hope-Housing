@@ -66,42 +66,43 @@ header{
   border-bottom:1px solid rgba(216,156,130,.2);
 }
 
-/* ================= LOGO ================= */
+/* ================= LOGO CONTAINER ================= */
 
 .logo-container{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:14px;
 
-  max-width:420px;
+  max-width:500px; /* allow more space */
   flex:1;
 }
 
-/* IMAGE */
+/* LOGO IMAGE (BIGGER) */
 
 .logo{
-  width:45px;
-  height:45px;
+  width:60px;
+  height:60px;
   object-fit:contain;
   flex-shrink:0;
+
+  border-radius:50%;
+  box-shadow:0 0 20px rgba(216,156,130,.6);
 }
 
-/* TEXT (FIXED FOR LONG NAME) */
+/* TEXT (BIGGER + CLEAN) */
 
 .logo-text{
   font-family:'Poppins', sans-serif;
-  font-weight:600;
+  font-weight:700;
 
-  font-size:15px;
+  font-size:17px;
   line-height:1.2;
 
   color:#d89c82;
 
-  /* 🔥 KEY FIX */
-  white-space:normal;     /* allow wrap */
-  max-width:260px;
+  white-space:normal;
+  max-width:300px;
 }
-
 /* ================= NAV ================= */
 
 nav{
